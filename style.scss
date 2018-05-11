@@ -1,0 +1,207 @@
+// @import "./fonts/fonts.scss";
+// $font: 'MuseoSansRounded-100', sans-serif;
+// $font-bold: 'MuseoSansRounded-300', sans-serif;
+// $font-bolder: 'MuseoSansRounded-500', sans-serif;
+// $font-boldest: 'MuseoSansRounded-700', sans-serif;
+$font: 'museo_sans_rounded', sans-serif;
+$btn-blue: #69758E;
+$font-blue: #556681;
+$font-red: #CD5D5A;
+$font-green: #4E5C42;
+$font-white: #F4F6EC;
+$font-black: #434343;
+
+* {
+  color: $font-black;
+  font-family: $font;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  letter-spacing: normal;
+  word-spacing: normal;
+  box-sizing: border-box;
+}
+.noflipclock {
+  line-height: 50px;
+  font-size: calc(36px + (50 - 36) * ((100vw - 300px) / (600 - 300)));
+  font-family: "PT Sans", "museo_sans_rounded", sans-serif;
+  font-weight: 900;
+  color: $font-green;
+  position: relative;
+  .hours, .seconds, .minutes {
+    color: $font-green;
+    position: absolute;
+    bottom: -30px;
+    font-size: calc(11px + (15 - 11) * ((100vw - 300px) / (600 - 300)));
+  }
+  .hours {
+    left: calc(1px + (3 - 1) * ((100vw - 300px) / (600 - 300)));
+  }
+  .minutes {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .seconds {
+    right: calc(1px + (2 - 1) * ((100vw - 300px) / (600 - 300)));
+  }
+}
+#timer {
+  margin: auto;
+  display: inline-block;
+  margin-top: 10vw;
+  pointer-events: none;
+  @media (max-width: 320px) {
+    margin-top: 7vw;
+  }
+  @media (min-width: 414px) {
+    margin-top: 8vw;
+  }
+}
+// body {
+//   background-color: $font-white;
+//   width: 100%;
+//   position: relative;
+//   height: calc(100vw/1.42);
+//   border-top:1px solid black;
+//   border-bottom:1px solid black;
+//   overflow-x:hidden;
+// }
+.body_wrapper {
+  width: 100vw;
+  height: auto;
+  padding-bottom: 4vw;
+  position: relative;
+  background-color: $font-white;
+  z-index: 1;
+}
+.center {
+  text-align: center;
+}
+.bold {
+  font-weight: 500;
+}
+.italic {
+  font-style: italic;
+}
+.title {
+  color: $font-red;
+  font-family: $font;
+  font-size: calc(24px + (32 - 24) * ((100vw - 300px) / (600 - 300)));
+  line-height: 32px;
+  display: inline-block;
+  letter-spacing: 1px;
+  .capitalize {
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: capitalize;
+  }
+  @media (min-width: 319px) {
+    margin-top: 2vw;
+  }
+  @media (min-width: 375px) {
+    margin-top: 4vw;
+    letter-spacing: 3px;
+  }
+}
+.sub-title {
+  font-size: calc(16px + (24 - 16) * ((100vw - 300px) / (600 - 300)));
+  line-height: 24px;
+  font-family: $font;
+  color: $font-green;
+  margin-bottom: 2vw;
+  letter-spacing: 2px;
+  @media (max-width: 354px) {
+    margin-bottom: 1vw;
+  }
+}
+.footer {
+  bottom: 0;
+  position: relative;
+  margin: auto;
+  margin-top: 7vw;
+  left: 0;
+  right: 0;
+  @media (min-width: 375px) {
+    margin-top: 7.5vw;
+    .sub-title {
+      margin-bottom: 4vw;
+    }
+  }
+}
+.button {
+  font-size: 14px;
+  background: $font-green;
+  font-family: $font;
+  color: #F7F3EF;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  text-transform: uppercase;
+}
+.button#btn1 {
+  margin: auto;
+  width: 126px;
+  height: 40px;
+  padding-left: 16px;
+  padding-right: 30px;
+  position: relative;
+  border-radius: 5px;
+}
+#btn1:after {
+  content: '';
+  position: absolute;
+  margin: auto;
+  margin-left: 8px;
+  border: 6px solid transparent;
+  border-left-color: #fff;
+  top: 0;
+  bottom: 0;
+  height: 0;
+  width: 0;
+}
+.flipclock-wrapper {
+  width: auto!important;
+  .flipclock-divider {
+    width: calc(10px + (20 - 10) * ((100vw - 300px) / (600 - 300)));
+    height: calc(10vw * 1.5);
+    &:nth-of-type(1) {
+      width: 0;
+    }
+    .flipclock-label {
+      right: calc(-55px + (-73 + 55) * ((100vw - 300px) / (600 - 300)));
+    }
+    &.seconds .flipclock-label, &.minutes .flipclock-label {
+      right: calc(-55px + (-73 + 55) * ((100vw - 300px) / (600 - 300)));
+    }
+    .flipclock-dot {
+      width: calc(5px + (10 - 5) * ((100vw - 300px) / (600 - 300)));
+      height: calc(5px + (10 - 5) * ((100vw - 300px) / (600 - 300)));
+      box-shadow: none;
+      background: $font-red;
+      &.top { top: calc(10vw * 0.5); }
+      &.bottom { bottom: calc(10vw * 0.5); }
+    }
+  }
+  ul.flip {
+    width: calc(30px + (40 - 30) * ((100vw - 300px) / (600 - 300)));
+    height: calc(50px + (60 - 50) * ((100vw - 300px) / (600 - 300)));
+    box-shadow: 0 2px 5px rgba($font-black, 0.5);
+    margin: 1vw;
+    li {
+      line-height: calc(50px + (60 - 50) * ((100vw - 300px) / (600 - 300)));
+      a div {
+        div.inn {
+          background-color: $font-red;
+          color: $font-white;
+          font-size: calc(30px + (36 - 30) * ((100vw - 300px) / (600 - 300)));
+          font-family: "PT Sans", $font;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}
